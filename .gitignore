@@ -5,5 +5,6 @@ certs
 *.key
 *.csr
 config.json
+*.json
 node_modules
 
