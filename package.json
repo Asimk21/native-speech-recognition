@@ -1,0 +1,21 @@
+{
+  "name": "native_speech_recognition",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "slack-webhook": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "to": "^0.2.9",
+    "update": "^0.7.4"
+  }
+}

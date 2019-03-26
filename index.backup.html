@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>Speech to text with JS</title>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<style type="text/css">
+		body{
+			font-family: verdana;
+		}
+		#speechToText{
+			height: 1000px;
+			border: 1px solid #ccc;
+			padding: 10px;
+			box-shadow: 0 0 10px 0 #bbb;
+			margin-bottom: 30px;
+			font-size: 14px;
+			line-height: 25px;
+		}
+	</style>
+
+	<body>
+		<h4 align="center">Speech to text converter in Js</h4>
+		<div id="speechToText" contenteditable="true"></div> 
+		
+		
+
+		<script type="text/javascript">
+			
+			let prevOutput = ""
+			var recorded_data = []
+			
+			window.speechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
+
+			const recognition = new webkitSpeechRecognition();
+			recognition.interimResults = true;
+
+			let p = document.createElement('p');
+			
+			const speechToText = document.querySelector("#speechToText")
+	
+			recognition.addEventListener('result', e => {
+					const transcript = Array.from(e.results)
+					.map(result => result[0])
+					.map(result => result.transcript)
+					.join('')
+
+					// p.textContent = transcript
+					
+					if(e.results[0].isFinal){
+						console.log("prevOutput " + prevOutput)
+						if(prevOutput.includes('speech to text' || 'speech-to-text')){
+							console.log("Recording data");
+							recorded_data.push(transcript);
+							console.log(recorded_data)
+						}
+						if(prevOutput.includes('send to Slack')){
+							
+							console.log("Recorded data: " +recorded_data)
+							p.textContent = recorded_data
+							
+
+							$.ajax({
+							  type: 'POST',
+							  data: JSON.stringify({"text": recorded_data}),
+							  contentType: 'application/json',
+							  url: '/slack'
+							});
+
+						}
+						prevOutput = transcript;
+					}
+
+			});
+
+			recognition.addEventListener('end', recognition.start);
+			recognition.start();
+
+		</script>
+	</body>
+</html>
