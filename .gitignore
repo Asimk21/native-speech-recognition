@@ -4,7 +4,7 @@ certs
 *.pem
 *.key
 *.csr
-config.json
+./config.json
 *.json
 node_modules
 
