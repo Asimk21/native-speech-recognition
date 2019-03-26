@@ -1,3 +1,8 @@
 ./certs/*
+certs
+./certs
+*.pem
+*.key
+*.csr
 node_modules
 
