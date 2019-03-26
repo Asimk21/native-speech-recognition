@@ -8,3 +8,6 @@ openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.p
 
 
 
+# Slack
+
+Replace SLACK_WEBHOOK_TOKEN with actual token in config.json file
