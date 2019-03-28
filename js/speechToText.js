@@ -23,7 +23,7 @@ function SpeechToText() {
 
     this.sendRecordedDataToSlack = function(){
         console.log("Sending Recorded data")
-        if (recorded_data === undefined || recorded_data.length == 0){
+        if (recorded_data === undefined || recorded_data.length === 0){
             console.log("Nothing to send")
         }else{
             $.ajax({
@@ -35,6 +35,9 @@ function SpeechToText() {
         }
         
         recorded_data = []
+        document.getElementById("sendToAIEngine").disabled = true
+        document.getElementById("sendToSlack").disabled = true
+
     }
 
     recognition.onresult = function(e) {
@@ -45,7 +48,12 @@ function SpeechToText() {
 
         if(e.results[0].isFinal){
             recorded_data.push(transcript); 
-            console.log("OnResult : "+recorded_data)    
+        }
+
+        if(! (recorded_data === undefined || recorded_data.length === 0) ) {
+            console.log("recorded_data present")
+            document.getElementById("sendToAIEngine").disabled = false
+            document.getElementById("sendToSlack").disabled = false
         }
 
     }
@@ -66,6 +74,14 @@ function SpeechToText() {
     this.reset = function(){
         recognizing = false;
         toggleButton.innerHTML = "Click to Start Recording"
+    }
+
+    this.getLastRecordedData = function(){
+        if(recorded_data === undefined || recorded_data.length === 0){
+            return ""
+        }else{
+            return recorded_data[recorded_data.length - 1]
+        }
     }
 
 }

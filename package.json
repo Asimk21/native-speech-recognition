@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "apiai": "^4.0.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "slack-webhook": "^1.0.0"
