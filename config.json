@@ -1,3 +1,4 @@
 {
-	"slackWebhookToken" : "SLACK_WEBHOOK_TOKEN"
+	"slackWebhookToken" : "SLACK_WEBHOOK_TOKEN",
+ 	"dialogFlowToken" : "DIALOGFLOW_CLIENT_TOKEN"
 }
