@@ -15,9 +15,9 @@ Please answer below
 
 4. Jira ticket link : 
 This should include 
-1. Detail evidence of testing with explanations of any issues
-2. Devices on which testing is done
-3. Telemetry Logs for just one pass and one fail run with identifiable naming conventions
+ - Detail evidence of testing with explanations of any issues
+ - Devices on which testing is done
+ - Telemetry Logs for just one pass and one fail run with identifiable naming conventions
 
 
 # Service Desk ticket link
