@@ -1,14 +1,33 @@
-# Description
-
-Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
-
-Fixes # (issue)
-
 ## Type of change
-
-Please delete options that are not relevant.
-
 - [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
+- [ ] New test (non-breaking change which adds functionality) 
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] This change requires a documentation update
+- [ ] Other (specify details in the description)
+
+# Description
+Please answer below  
+1. Please include a summary of the new test or the issue which is fixed.
+
+2. How PR would affect existing tests?
+
+3. Provide the tag/GitHub repo link of changes.
+
+4. Jira ticket link : 
+This should include 
+1. Detail evidence of testing with explanations of any issues
+2. Devices on which testing is done
+3. Telemetry Logs for just one pass and one fail run with identifiable naming conventions
+
+
+# Service Desk ticket link
+(Reference to any support cases that causes this change)
+
+# How changes are related to Live? How it would affect existing tests?
+
+
+
+
+
+
+
